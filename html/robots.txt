@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://iloveyouinfinity.com/sitemap.xml
+Host: https://iloveyouinfinity.com

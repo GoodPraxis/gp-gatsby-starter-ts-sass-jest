@@ -1,0 +1,87 @@
+stages:
+  - build
+  - test
+  - review
+  - deploy
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+    - node_modules/
+
+build:static:
+  stage: build
+  image: node:latest
+  script:
+  - npm install
+  - ./node_modules/.bin/gatsby build --prefix-paths
+  artifacts:
+    paths:
+      - public/
+  only:
+  - merge_requests
+  - master
+  - tags
+
+test:
+  stage: test
+  image: node:latest
+  script:
+  - npm install
+  - npm test
+  only:
+  - merge_requests
+  - master
+  - tags
+
+review:
+  stage: review
+  script:
+    - rsync -av --delete public /srv/nginx/pages/$CI_PROJECT_PATH_SLUG-$CI_BUILD_REF_SLUG
+  dependencies:
+    - build:static
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    url: https://$CI_PROJECT_PATH_SLUG-$CI_BUILD_REF_SLUG.$APPS_DOMAIN
+    on_stop: stop_review
+  only:
+    - merge_requests
+  tags:
+    - nginx
+    - review-apps
+    - goodpraxis
+
+stop_review:
+  stage: review
+  script:
+    - rm -rf public /srv/nginx/pages/$CI_PROJECT_PATH_SLUG-$CI_BUILD_REF_SLUG
+  variables:
+    GIT_STRATEGY: none
+  when: manual
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    action: stop
+  only:
+    - merge_requests
+  tags:
+    - nginx
+    - review-apps
+    - goodpraxis
+
+deploy:staging:
+  stage: deploy
+  script:
+    - rsync -av --delete public /srv/nginx/pages/$CI_PROJECT_PATH_SLUG-staging
+  dependencies:
+    - build:static
+  environment:
+    name: staging
+    url: https://$CI_PROJECT_PATH_SLUG-staging.$APPS_DOMAIN
+  only:
+    refs:
+      - master
+  tags:
+    - nginx
+    - review-apps
+    - goodpraxis
