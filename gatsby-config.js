@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'ASAP',
-        short_name: 'asap',
+        name: 'Example',
+        short_name: 'example',
         start_url: '/',
         background_color: '#000000',
         theme_color: '#000000',
