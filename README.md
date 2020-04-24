@@ -4,7 +4,8 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's Starter: TypeScript + SASS + Jest
+  Gatsby's Starter: TypeScript + SASS + Jest + SEO
 </h1>
 
-Gatsby started used at [Good Praxis](https://goodpraxis.coop)
+Gatsby starter used at [Good Praxis](https://goodpraxis.coop). Setup to use
+TypeScript, SASS (SCSS), Jest for testing, and Helmet for SEO.
