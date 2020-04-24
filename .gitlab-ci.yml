@@ -1,3 +1,6 @@
+# This is an internal setup used by Good Praxis.
+# If this is not run on Good Praxis servers, you need to change it.
+
 stages:
   - build
   - test
