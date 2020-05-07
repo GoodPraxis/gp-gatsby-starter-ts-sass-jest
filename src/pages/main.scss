@@ -1,7 +1,8 @@
 @import 'colors.scss';
+@import 'fonts.scss';
 
 body {
   background: $color-background;
   color: $color-text;
-  font-family: sans-serif;
+  font-family: $font-family-main;
 }
