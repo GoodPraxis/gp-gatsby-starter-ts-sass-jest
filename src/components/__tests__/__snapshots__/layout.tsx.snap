@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout renders correctly 1`] = `
-<div>
-  <main>
-    <div>
-      Foobar
-    </div>
-  </main>
-</div>
+<main>
+  <div>
+    Foobar
+  </div>
+</main>
 `;
