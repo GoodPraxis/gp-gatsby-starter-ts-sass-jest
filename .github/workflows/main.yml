@@ -24,13 +24,5 @@ jobs:
       run: npm test
     - name: Run E2E test
       run: npm run test:e2e:ci
-    - uses: actions/upload-artifact@v1
-      with:
-        name: screenshots
-        path: cypress/screenshots
-    - uses: actions/upload-artifact@v1
-      with:
-        name: videos
-        path: cypress/videos
       env:
         CI: true
