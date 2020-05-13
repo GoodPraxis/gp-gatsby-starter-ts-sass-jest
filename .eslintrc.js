@@ -2,7 +2,8 @@ module.exports = {
     "env": {
         "browser": true,
         "es6": true,
-        "jest/globals": true
+        "jest/globals": true,
+        "cypress/globals": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -23,14 +24,21 @@ module.exports = {
     "plugins": [
         "react",
         "@typescript-eslint",
-        "jest"
+        "jest",
+        "cypress"
     ],
     "rules": {
         "import/extensions": "off",
         "react/jsx-filename-extension": [
             1,
             {
-                "extensions": ['.jsx', '.tsx'],
+                "extensions": [".jsx", ".tsx"],
+            }
+        ],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": ["**/__tests__/**", "cypress/**"]
             }
         ],
     },

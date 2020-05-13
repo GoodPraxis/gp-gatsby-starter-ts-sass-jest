@@ -33,6 +33,13 @@ test:
   script:
   - npm install
   - npm test
+  - npm run test:e2e:ci
+  artifacts:
+    expire_in: 1 week
+    when: always
+    paths:
+    - cypress/screenshots
+    - cypress/videos
   only:
   - merge_requests
   - master
