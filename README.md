@@ -31,9 +31,13 @@ Remember to **update your snapshots** when you change things (see below).
 
 Testing
 =======
-You can run unit tests by running:
+To run all tests, use:
 
     npm test
+
+You can run unit tests by running:
+
+    npm run test:unit
 
 You can run E2E tests by running:
 
