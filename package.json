@@ -26,12 +26,18 @@
     "react-helmet": "^6.0.0"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
+    "axe-core": "^3.5.3",
     "babel-jest": "^26.0.1",
     "babel-preset-gatsby": "^0.4.2",
+    "cypress": "^4.5.0",
+    "cypress-axe": "^0.8.1",
+    "cypress-image-snapshot": "^3.1.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jest": "^23.11.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -40,6 +46,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.5.4",
     "react-test-renderer": "^16.13.0",
+    "start-server-and-test": "^1.11.0",
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.2"
   },
@@ -49,6 +56,10 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest"
+    "test": "jest",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
   }
 }

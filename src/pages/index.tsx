@@ -8,6 +8,7 @@ import './main.scss';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <h1>Home</h1>
   </Layout>
 );
 
