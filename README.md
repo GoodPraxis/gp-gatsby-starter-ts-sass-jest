@@ -49,10 +49,21 @@ This will open Cypress in a new window. To run it in CI mode, use:
 
     npm run test:e2e:ci
 
+;Snapshots
+
+Jest unit tests will often compare rendered markup with snapshots.
+If you need to update them after making changes to the markup, run:
+
+    npm test -- -u
+
 Cypress is setup with **visual regression**. If you need to update stored
 snapshots, run this command while you have your development instance running:
 
     npx cypress run --env updateSnapshots=true
+
+You can run both commands by executing:
+
+    npm run test:snapshots
 
 Building
 ========
