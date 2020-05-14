@@ -49,7 +49,8 @@ This will open Cypress in a new window. To run it in CI mode, use:
 
     npm run test:e2e:ci
 
-;Snapshots
+Snapshots
+---------
 
 Jest unit tests will often compare rendered markup with snapshots.
 If you need to update them after making changes to the markup, run:
