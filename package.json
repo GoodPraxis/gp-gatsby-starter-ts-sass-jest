@@ -45,6 +45,9 @@
     "eslint-plugin-react-hooks": "^2.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.5.4",
+    "jest-junit": "^10.0.0",
+    "junit-merge": "^2.0.0",
+    "npm-run-all": "^4.1.5",
     "react-test-renderer": "^16.13.0",
     "start-server-and-test": "^1.11.0",
     "ts-jest": "^25.5.1",
@@ -56,12 +59,16 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "npm run test:unit && npm run test:e2e:ci",
-    "test:unit": "jest",
+    "test": "run-s test:unit test:e2e:ci test:merge test:clean",
+    "test:clean": "rm -r results",
+    "test:merge": "npx junit-merge -d results -o merged-junit.xml",
+    "test:unit": "JEST_JUNIT_OUTPUT_DIR=results jest --ci --reporters=default --reporters=jest-junit",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
     "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
-    "test:snapshots": "npx cypress run --env updateSnapshots=true && jest -u"
+    "test:snapshots:unit": "jest -u",
+    "test:snapshots:e2e": "cypress run --env updateSnapshots=true",
+    "test:snapshots": "run-p test:snapshots:unit test:snapshots:e2e"
   }
 }
