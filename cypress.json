@@ -1,3 +1,8 @@
 {
-  "baseUrl": "http://localhost:8000/"
+  "baseUrl": "http://localhost:8000/",
+  "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "results/test-results-[hash].xml",
+    "toConsole": false
+  }
 }

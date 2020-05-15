@@ -35,10 +35,12 @@ test:
   - npm test
   artifacts:
     expire_in: 1 week
-    when: always
+    when: on_failure
     paths:
     - cypress/screenshots
     - cypress/videos
+    reports:
+      junit: merged-junit.xml
   only:
   - merge_requests
   - master
