@@ -32,7 +32,7 @@ export const PureSEO: React.FC<SEOProps> = ({
       lang,
     }}
     title={title}
-    titleTemplate={metaTitle}
+    titleTemplate="%s"
     meta={[
       {
         name: 'description',
@@ -89,7 +89,7 @@ const SEO: React.FC<SEOProps> = ({
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const { title: metaTitle, metaAuthor } = site.siteMetadata;
+  const { title: metaTitle, metaAuthor, image } = site.siteMetadata;
 
   return (
     <PureSEO
@@ -99,7 +99,7 @@ const SEO: React.FC<SEOProps> = ({
       lang={lang}
       metaAuthor={metaAuthor}
       meta={meta}
-      image={site.image}
+      image={image}
     />
   );
 };
