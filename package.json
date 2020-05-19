@@ -65,10 +65,11 @@
     "test:unit": "JEST_JUNIT_OUTPUT_DIR=results jest --ci --reporters=default --reporters=jest-junit",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
+    "cy:snapshots": "cypress run --env updateSnapshots=true",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
     "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
     "test:snapshots:unit": "jest -u",
-    "test:snapshots:e2e": "cypress run --env updateSnapshots=true",
+    "test:snapshots:e2e": "start-server-and-test develop http://localhost:8000 cy:snapshots",
     "test:snapshots": "run-p test:snapshots:unit test:snapshots:e2e"
   }
 }
