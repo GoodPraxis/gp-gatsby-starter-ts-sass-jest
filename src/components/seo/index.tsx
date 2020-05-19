@@ -19,56 +19,62 @@ interface SEOProps {
   metaAuthor?: string;
 }
 
-export const PureSEO: React.FC<SEOProps> = ({
+export function getMeta({
   description = '',
-  lang = 'en',
   meta = [],
   title = '',
   metaTitle = '',
   image = '',
-}: SEOProps) => (
-  <Helmet
-    htmlAttributes={{
-      lang,
-    }}
-    title={title}
-    titleTemplate="%s"
-    meta={[
-      {
-        name: 'description',
-        content: description,
-      },
-      {
-        property: 'og:image',
-        content: image,
-      },
-      {
-        property: 'og:title',
-        content: metaTitle,
-      },
-      {
-        property: 'og:description',
-        content: description,
-      },
-      {
-        property: 'og:type',
-        content: 'website',
-      },
-      {
-        name: 'twitter:card',
-        content: 'summary',
-      },
-      {
-        name: 'twitter:title',
-        content: title,
-      },
-      {
-        name: 'twitter:description',
-        content: description,
-      },
-    ].concat(meta)}
-  />
-);
+}: SEOProps) {
+  return [
+    {
+      name: 'description',
+      content: description,
+    },
+    {
+      property: 'og:image',
+      content: image,
+    },
+    {
+      property: 'og:title',
+      content: metaTitle,
+    },
+    {
+      property: 'og:description',
+      content: description,
+    },
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary',
+    },
+    {
+      name: 'twitter:title',
+      content: title,
+    },
+    {
+      name: 'twitter:description',
+      content: description,
+    },
+  ].concat(meta);
+}
+
+export const PureSEO: React.FC<SEOProps> = (props: SEOProps) => {
+  const { lang = 'en', title } = props;
+  return (
+    <Helmet
+      htmlAttributes={{
+        lang,
+      }}
+      title={title}
+      titleTemplate="%s"
+      meta={getMeta(props)}
+    />
+  );
+};
 
 const SEO: React.FC<SEOProps> = ({
   description = '', lang = 'en', meta = [], title,
