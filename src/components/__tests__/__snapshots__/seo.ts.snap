@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SEO creates correct SEO props 1`] = `
+Array [
+  Object {
+    "content": "Foobar description",
+    "name": "description",
+  },
+  Object {
+    "content": "foo.bar",
+    "property": "og:image",
+  },
+  Object {
+    "content": "FooBar",
+    "property": "og:title",
+  },
+  Object {
+    "content": "Foobar description",
+    "property": "og:description",
+  },
+  Object {
+    "content": "website",
+    "property": "og:type",
+  },
+  Object {
+    "content": "summary",
+    "name": "twitter:card",
+  },
+  Object {
+    "content": "FooBar",
+    "name": "twitter:title",
+  },
+  Object {
+    "content": "Foobar description",
+    "name": "twitter:description",
+  },
+]
+`;
