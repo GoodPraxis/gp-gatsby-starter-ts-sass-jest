@@ -37,3 +37,8 @@ jobs:
       run: npm run test:e2e:ci
       env:
         CI: true
+    - uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+        name: visual-regression
+        path: '**/__diff_output__/*'
