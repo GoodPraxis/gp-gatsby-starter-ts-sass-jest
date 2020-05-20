@@ -17,10 +17,4 @@ describe('Homepage tests', () => {
     cy.get('meta[property="og:title"]')
       .should('have.attr', 'content', 'Website');
   });
-
-  it('should match stores visual snapshot', () => {
-    cy.visit('/');
-    cy.get('h1').contains('Home'); // Trigger rendering (Cypress bug?)
-    cy.matchImageSnapshot('home');
-  });
 });
