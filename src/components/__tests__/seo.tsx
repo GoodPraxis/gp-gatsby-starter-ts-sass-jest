@@ -1,4 +1,6 @@
-import { getMeta } from '../seo';
+import * as renderer from 'react-test-renderer';
+import * as React from 'react';
+import { getMeta, PureSEO as SEO } from '../seo';
 
 describe('SEO', () => {
   it('creates correct SEO props', () => {
@@ -9,6 +11,12 @@ describe('SEO', () => {
       image: 'foo.bar',
     });
     expect(meta).toMatchSnapshot();
+  });
+
+  it('renders the component without any errors', () => {
+    renderer.create(<SEO />);
+    renderer.create(<SEO title="foobar" />);
+    renderer.create(<SEO meta={[{ name: 'foo', content: 'bar' }]} />);
   });
 
   it('concatenates meta data', () => {
