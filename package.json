@@ -34,7 +34,6 @@
     "babel-preset-gatsby": "^0.4.6",
     "cypress": "^4.5.0",
     "cypress-axe": "^0.8.1",
-    "cypress-image-snapshot": "^3.1.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-cypress": "^2.10.3",
@@ -65,11 +64,8 @@
     "test:unit": "JEST_JUNIT_OUTPUT_DIR=results jest --ci --reporters=default --reporters=jest-junit --coverage",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:snapshots": "cypress run --env updateSnapshots=true",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
     "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
-    "test:snapshots:unit": "jest -u",
-    "test:snapshots:e2e": "start-server-and-test develop http://localhost:8000 cy:snapshots",
-    "test:snapshots": "run-p test:snapshots:unit test:snapshots:e2e"
+    "test:snapshots:unit": "jest -u"
   }
 }
