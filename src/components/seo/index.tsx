@@ -76,6 +76,10 @@ export const PureSEO: React.FC<SEOProps> = (props: SEOProps) => {
   );
 };
 
+/*
+  istanbul ignore next
+  Covered in E2E test
+*/
 const SEO: React.FC<SEOProps> = ({
   description = '', lang = 'en', meta = [], title,
 }: SEOProps) => {

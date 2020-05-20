@@ -18,8 +18,9 @@ describe('Homepage tests', () => {
       .should('have.attr', 'content', 'Website');
   });
 
-  it('should be publicly accessible', () => {
+  it('should match stores visual snapshot', () => {
     cy.visit('/');
+    cy.get('h1').contains('Home'); // Trigger rendering (Cypress bug?)
     cy.matchImageSnapshot('home');
   });
 });

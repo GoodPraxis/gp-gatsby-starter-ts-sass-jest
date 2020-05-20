@@ -62,7 +62,7 @@
     "test": "run-s test:unit test:e2e:ci test:merge test:clean",
     "test:clean": "rm -r results",
     "test:merge": "npx junit-merge -d results -o merged-junit.xml",
-    "test:unit": "JEST_JUNIT_OUTPUT_DIR=results jest --ci --reporters=default --reporters=jest-junit",
+    "test:unit": "JEST_JUNIT_OUTPUT_DIR=results jest --ci --reporters=default --reporters=jest-junit --coverage",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:snapshots": "cypress run --env updateSnapshots=true",

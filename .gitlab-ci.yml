@@ -33,6 +33,7 @@ test:
   script:
   - npm install
   - npm test
+  coverage: /All\sfiles.*?\s+(\d+.\d+)/
   artifacts:
     expire_in: 1 week
     when: on_failure
