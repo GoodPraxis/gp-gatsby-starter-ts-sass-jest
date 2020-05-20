@@ -40,5 +40,5 @@ jobs:
     - uses: actions/upload-artifact@v2
       if: failure()
       with:
-        name: visual-regression
-        path: '**/__diff_output__/*'
+        name: cypress-screenshots
+        path: 'cypress/screenshots/'
