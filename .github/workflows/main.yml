@@ -28,7 +28,7 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}-
     - name: Install dependencies
-      run: npm install
+      run: npm ci
     - name: Run test build
       run: npm run build
     - name: Run unit test
