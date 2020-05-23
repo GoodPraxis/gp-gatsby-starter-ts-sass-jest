@@ -58,14 +58,15 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "run-s test:unit test:e2e:ci test:merge test:clean",
-    "test:clean": "rm -r results",
-    "test:merge": "npx junit-merge -d results -o merged-junit.xml",
-    "test:unit": "JEST_JUNIT_OUTPUT_DIR=results jest --ci --reporters=default --reporters=jest-junit --coverage",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "lint": "eslint --ext .js,.ts,.jsx,.tsx src/ cypress/",
+    "test:clean": "rm -r results",
     "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
-    "test:snapshots:unit": "jest -u"
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:merge": "npx junit-merge -d results -o merged-junit.xml",
+    "test:snapshots:unit": "jest -u",
+    "test:unit": "JEST_JUNIT_OUTPUT_DIR=results jest --ci --reporters=default --reporters=jest-junit --coverage",
+    "test": "run-s test:unit test:e2e:ci test:merge test:clean"
   }
 }

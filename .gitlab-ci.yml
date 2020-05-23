@@ -32,6 +32,7 @@ test:
   image: node:latest
   script:
   - npm install
+  - npm lint
   - npm test
   coverage: /All\sfiles.*?\s+(\d+.\d+)/
   artifacts:
