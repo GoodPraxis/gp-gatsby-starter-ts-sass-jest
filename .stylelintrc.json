@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "plugins": ["stylelint-declaration-use-variable"],
+  "rules": {
+    "sh-waqar/declaration-use-variable": ["/color/", "font-family"]
+  }
+}
