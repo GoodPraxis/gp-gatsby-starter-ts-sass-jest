@@ -7,18 +7,23 @@ stages:
   - review
   - deploy
 
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
+
 # This folder is cached between builds
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
 cache:
   paths:
-    - node_modules/
-
+    - .npm
+    - cache/Cypress
+    - node_modules
 build:static:
   stage: build
-  image: node:latest
+  image: cypress/base:10
   script:
   - npm install
-  - ./node_modules/.bin/gatsby build --prefix-paths
+  - npx gatsby build --prefix-paths
   artifacts:
     paths:
       - public/
@@ -29,15 +34,16 @@ build:static:
 
 test:
   stage: test
-  image: node:latest
+  image: cypress/base:10
   script:
   - npm install
+  - npx cypress cache path
+  - npx cypress cache list
   - npm run lint
   - npm test
   coverage: /All\sfiles.*?\s+(\d+.\d+)/
   artifacts:
     expire_in: 1 week
-    when: on_failure
     paths:
     - cypress/screenshots
     - cypress/videos
@@ -77,23 +83,6 @@ stop_review:
     action: stop
   only:
     - merge_requests
-  tags:
-    - nginx
-    - review-apps
-    - goodpraxis
-
-deploy:staging:
-  stage: deploy
-  script:
-    - rsync -av --delete public /srv/nginx/pages/$CI_PROJECT_PATH_SLUG-staging
-  dependencies:
-    - build:static
-  environment:
-    name: staging
-    url: https://$CI_PROJECT_PATH_SLUG-staging.$APPS_DOMAIN
-  only:
-    refs:
-      - master
   tags:
     - nginx
     - review-apps
