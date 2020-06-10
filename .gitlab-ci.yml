@@ -23,6 +23,7 @@ build:static:
   image: cypress/base:10
   script:
   - npm install
+  - npx danger ci
   - npx gatsby build --prefix-paths
   artifacts:
     paths:
