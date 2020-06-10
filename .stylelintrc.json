@@ -2,6 +2,7 @@
   "extends": "stylelint-config-sass-guidelines",
   "plugins": ["stylelint-declaration-use-variable"],
   "rules": {
-    "sh-waqar/declaration-use-variable": ["/color/", "font-family"]
+    "sh-waqar/declaration-use-variable": ["/color/", "font-family"],
+    "number-leading-zero": "never"
   }
 }
