@@ -42,6 +42,8 @@ test:
   - npx cypress cache list
   - npm run lint
   - npm test
+  after_script:
+  - npm run test:merge
   coverage: /All\sfiles.*?\s+(\d+.\d+)/
   artifacts:
     expire_in: 1 week
