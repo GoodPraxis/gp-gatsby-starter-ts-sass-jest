@@ -10,12 +10,20 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 interface SEOProps {
+  // @TODO: false positive?
+  // eslint-disable-next-line
   description?: string;
+  // eslint-disable-next-line
   lang?: string;
+  // eslint-disable-next-line
   meta?: { name: string; content: any; property?: undefined; }[];
+  // eslint-disable-next-line
   image?: string;
+  // eslint-disable-next-line
   title?: string;
+  // eslint-disable-next-line
   metaTitle?: string;
+  // eslint-disable-next-line
   metaAuthor?: string;
 }
 
@@ -63,7 +71,9 @@ export function getMeta({
 }
 
 export const PureSEO: React.FC<SEOProps> = (props: SEOProps) => {
-  const { lang = 'en', title } = props;
+  const {
+    lang = 'en', title, description, meta, image, metaTitle, metaAuthor,
+  } = props;
   return (
     <Helmet
       htmlAttributes={{
@@ -71,7 +81,9 @@ export const PureSEO: React.FC<SEOProps> = (props: SEOProps) => {
       }}
       title={title}
       titleTemplate="%s"
-      meta={getMeta(props)}
+      meta={getMeta({
+        lang, title, description, meta, image, metaTitle, metaAuthor,
+      })}
     />
   );
 };

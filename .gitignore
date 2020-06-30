@@ -77,3 +77,5 @@ __diff_output__
 # Test results
 results
 *junit.xml
+
+.vscode/
