@@ -17,12 +17,11 @@ cache:
   paths:
     - .npm
     - cache/Cypress
-    - node_modules
 build:static:
   stage: build
   image: cypress/base:10
   script:
-  - npm install
+  - npm ci
   - npx danger ci
   - npx gatsby build --prefix-paths
   artifacts:
@@ -37,7 +36,7 @@ test:
   stage: test
   image: cypress/base:10
   script:
-  - npm install
+  - npm ci
   - npx cypress cache path
   - npx cypress cache list
   - npm run lint
