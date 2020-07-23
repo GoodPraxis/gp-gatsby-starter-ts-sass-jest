@@ -1,29 +1,21 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+type MetaEntry = {
+  name: string,
+  content: any,
+  property?: any,
+}
+
 interface SEOProps {
   // @TODO: false positive?
-  // eslint-disable-next-line
   description?: string;
-  // eslint-disable-next-line
   lang?: string;
-  // eslint-disable-next-line
-  meta?: { name: string; content: any; property?: undefined; }[];
-  // eslint-disable-next-line
+  meta?: MetaEntry[];
   image?: string;
-  // eslint-disable-next-line
   title?: string;
-  // eslint-disable-next-line
   metaTitle?: string;
-  // eslint-disable-next-line
   metaAuthor?: string;
 }
 
@@ -93,7 +85,7 @@ export const PureSEO: React.FC<SEOProps> = (props: SEOProps) => {
   Covered in E2E test
 */
 const SEO: React.FC<SEOProps> = ({
-  description = '', lang = 'en', meta = [], title,
+  description, lang, meta, title, image, metaTitle, metaAuthor,
 }: SEOProps) => {
   const { site } = useStaticQuery(
     graphql`
@@ -111,19 +103,33 @@ const SEO: React.FC<SEOProps> = ({
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const { title: metaTitle, metaAuthor, image } = site.siteMetadata;
+  const { title: dataMetaTitle, metaAuthor: dataMetaAuthor, image: dataImage } = site.siteMetadata;
 
   return (
     <PureSEO
       title={title}
-      metaTitle={metaTitle}
+      metaTitle={metaTitle || dataMetaTitle}
       description={metaDescription}
       lang={lang}
-      metaAuthor={metaAuthor}
+      metaAuthor={metaAuthor || dataMetaAuthor}
       meta={meta}
-      image={image}
+      image={image || dataImage}
     />
   );
 };
+
+const defaultProps = {
+  description: '',
+  title: '',
+  lang: 'en',
+  meta: [] as MetaEntry[],
+  image: '',
+  metaTitle: '',
+  metaAuthor: '',
+};
+
+SEO.defaultProps = defaultProps;
+
+PureSEO.defaultProps = defaultProps;
 
 export default SEO;
