@@ -55,7 +55,7 @@
     "react-test-renderer": "^16.13.0",
     "start-server-and-test": "^1.11.3",
     "stylelint": "^13.7.0",
-    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-declaration-use-variable": "^1.7.2",
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.7"
