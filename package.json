@@ -38,7 +38,7 @@
     "cypress-axe": "^0.8.1",
     "danger": "^10.4.0",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.4",
+    "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-cypress": "^2.11.1",
