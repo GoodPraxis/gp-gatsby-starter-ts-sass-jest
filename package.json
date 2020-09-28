@@ -15,7 +15,7 @@
     "gatsby-plugin-manifest": "^2.4.31",
     "gatsby-plugin-react-helmet": "^3.3.12",
     "gatsby-plugin-robots-txt": "^1.5.3",
-    "gatsby-plugin-sass": "^2.3.13",
+    "gatsby-plugin-sass": "^2.3.14",
     "gatsby-plugin-typescript": "^2.4.20",
     "gatsby-source-filesystem": "^2.3.31",
     "node-sass": "^4.14.1",
