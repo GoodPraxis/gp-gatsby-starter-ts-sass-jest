@@ -9,7 +9,6 @@ type MetaEntry = {
 }
 
 interface SEOProps {
-  // @TODO: false positive?
   description?: string;
   lang?: string;
   meta?: MetaEntry[];
@@ -62,7 +61,7 @@ export function getMeta({
   ].concat(meta);
 }
 
-export const PureSEO: React.FC<SEOProps> = (props: SEOProps) => {
+export const PureSEO = (props: SEOProps) => {
   const {
     lang = 'en', title, description, meta, image, metaTitle, metaAuthor,
   } = props;
@@ -84,7 +83,7 @@ export const PureSEO: React.FC<SEOProps> = (props: SEOProps) => {
   istanbul ignore next
   Covered in E2E test
 */
-const SEO: React.FC<SEOProps> = ({
+const SEO = ({
   description, lang, meta, title, image, metaTitle, metaAuthor,
 }: SEOProps) => {
   const { site } = useStaticQuery(
@@ -120,8 +119,8 @@ const SEO: React.FC<SEOProps> = ({
 
 const defaultProps = {
   description: '',
-  title: '',
   lang: 'en',
+  title: '',
   meta: [] as MetaEntry[],
   image: '',
   metaTitle: '',
