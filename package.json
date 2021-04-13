@@ -29,7 +29,7 @@
     "@goodpraxis/danger-js": "^0.6.2",
     "@testing-library/cypress": "^7.0.5",
     "@types/enzyme": "^3.10.8",
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^2.34.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
     "axe-core": "^4.1.4",
