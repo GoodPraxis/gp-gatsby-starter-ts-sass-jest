@@ -19,7 +19,7 @@ cache:
     - cache/Cypress
 build:static:
   stage: build
-  image: cypress/base:10
+  image: cypress/base:12
   script:
   - npm ci
   - npx danger ci
@@ -34,7 +34,7 @@ build:static:
 
 test:
   stage: test
-  image: cypress/base:10
+  image: cypress/base:12
   script:
   - npm ci
   - npx cypress cache path
