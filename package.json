@@ -17,7 +17,7 @@
     "gatsby-plugin-robots-txt": "^1.6.2",
     "gatsby-plugin-sass": "^4.4.0",
     "gatsby-plugin-typescript": "^3.4.0",
-    "gatsby-source-filesystem": "^3.4.0",
+    "gatsby-source-filesystem": "^3.5.0",
     "node-sass": "^5.0.0",
     "npm": "^7.11.2",
     "prop-types": "^15.7.2",
