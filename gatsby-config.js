@@ -36,6 +36,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-robots-txt',
-    'gatsby-plugin-typescript',
   ],
 };
