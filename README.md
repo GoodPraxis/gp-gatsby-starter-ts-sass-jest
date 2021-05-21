@@ -10,7 +10,7 @@
 Gatsby starter used at [Good Praxis](https://goodpraxis.coop). Setup to use
 TypeScript, SASS (SCSS), Jest and Cypress for testing, and Helmet for SEO.
 
-The Cypress E2E setup contains accessibility and visual regression tests.
+The Cypress E2E setup contains accessibility tests.
 
 Setup
 =====
