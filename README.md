@@ -35,7 +35,7 @@ Testing
 =======
 To run all tests, use:
 
-    npm test
+    npm run test
 
 You can run unit tests by running:
 
@@ -55,7 +55,7 @@ Snapshots
 Jest unit tests will often compare rendered markup with snapshots.
 If you need to update them after making changes to the markup, run:
 
-    npm test -- -u
+    npm run test -- -u
 
 Building
 ========
