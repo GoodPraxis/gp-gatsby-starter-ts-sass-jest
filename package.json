@@ -66,7 +66,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "lint:js": "eslint --ext .js,.ts,.jsx,.tsx src/ cypress/",
-    "lint:css": "stylelint \"**/*.scss\"",
+    "lint:css": "stylelint \"src/**/*.scss\"",
     "lint": "run-p lint:js lint:css",
     "test:clean": "rm -rf results",
     "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
