@@ -11,7 +11,7 @@
     "@types/react-helmet": "^6.1.1",
     "@types/react-test-renderer": "^17.0.1",
     "gatsby": "^3.8.1",
-    "gatsby-plugin-manifest": "^3.8.0",
+    "gatsby-plugin-manifest": "^3.9.0",
     "gatsby-plugin-react-helmet": "^4.8.0",
     "gatsby-plugin-robots-txt": "^1.6.8",
     "gatsby-plugin-sass": "^4.8.0",
