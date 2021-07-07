@@ -25,7 +25,7 @@
   "devDependencies": {
     "@goodpraxis/danger-js": "^0.6.2",
     "@testing-library/cypress": "^7.0.6",
-    "@types/enzyme": "^3.10.8",
+    "@types/enzyme": "^3.10.9",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
