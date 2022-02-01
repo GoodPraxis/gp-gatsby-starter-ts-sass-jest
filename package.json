@@ -34,7 +34,7 @@
     "babel-preset-gatsby": "^2.6.0",
     "cypress": "^9.3.1",
     "cypress-axe": "^0.14.0",
-    "danger": "^10.9.0",
+    "danger": "^11.0.2",
     "enzyme": "^3.11.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
