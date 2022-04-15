@@ -7,7 +7,7 @@
     "@babel/helper-compilation-targets": "^7.17.7",
     "@types/jest": "^27.4.1",
     "@types/react": "^18.0.5",
-    "@types/react-dom": "^18.0.0",
+    "@types/react-dom": "^18.0.1",
     "@types/react-helmet": "^6.1.5",
     "@types/react-test-renderer": "^18.0.0",
     "gatsby": "^3.14.6",
