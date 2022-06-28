@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "author": "GP",
   "dependencies": {
-    "@babel/helper-compilation-targets": "^7.18.2",
+    "@babel/helper-compilation-targets": "^7.18.6",
     "@types/jest": "^27.5.0",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
