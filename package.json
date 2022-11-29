@@ -8,7 +8,7 @@
     "@types/jest": "^27.5.0",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
-    "@types/react-helmet": "^6.1.5",
+    "@types/react-helmet": "^6.1.6",
     "@types/react-test-renderer": "^18.0.0",
     "gatsby": "^3.14.6",
     "gatsby-plugin-manifest": "^5.2.0",
